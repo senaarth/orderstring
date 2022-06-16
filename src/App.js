@@ -4,6 +4,7 @@ import "./global.css";
 
 function App() {
     const [value, setValue] = React.useState("");
+    const [repeat, setRepeat] = React.useState(false);
     const result = React.useMemo(() => {
         let lines = value.split("\n");
 
@@ -13,7 +14,8 @@ function App() {
                 .sort((a, b) => Number(a) - Number(b))
                 .reduce((prev, curr) => {
                     if (
-                        prev.find((item) => Number(item) === Number(curr)) ||
+                        (prev.find((item) => Number(item) === Number(curr)) &&
+                            !repeat) ||
                         Number(curr) < 0
                     ) {
                         return prev;
@@ -26,7 +28,7 @@ function App() {
         }, []);
 
         return result;
-    }, [value]);
+    }, [value, repeat]);
 
     return (
         <div className="App">
@@ -39,6 +41,14 @@ function App() {
                 value={value}
                 onChange={({ target }) => setValue(target.value)}
             />
+            <div className="check-container">
+                <input
+                    type="checkbox"
+                    value={repeat}
+                    onChange={() => setRepeat(!repeat)}
+                />
+                <p>Marque essa caixa para haver repetições</p>
+            </div>
             <p>
                 Quando o senhor colar ai em cima elas devem aparecer aqui
                 embaixo ordenados:

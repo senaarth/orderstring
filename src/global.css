@@ -43,8 +43,24 @@ textarea {
     max-height: 250px;
     padding: 8px;
 
-    min-width: 100%;
-    max-width: 100%;
+    min-width: 90%;
+    max-width: 90%;
 
     border-radius: 4px;
+}
+
+.check-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.check-container * {
+    margin: 0;
+    width: unset;
+}
+
+.check-container p {
+    margin-left: 0.5rem;
 }
