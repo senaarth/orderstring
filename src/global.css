@@ -19,7 +19,7 @@ body,
 }
 
 .App {
-    padding-top: 8rem;
+    padding: 8rem 0;
 }
 
 h1,
@@ -37,10 +37,14 @@ p {
     text-align: center;
 }
 
-input {
+textarea {
     border: 0;
-    height: 50px;
+    min-height: 100px;
+    max-height: 250px;
     padding: 8px;
 
-    border-radius: 8px;
+    min-width: 100%;
+    max-width: 100%;
+
+    border-radius: 4px;
 }
