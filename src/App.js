@@ -43,11 +43,14 @@ function App() {
             />
             <div className="check-container">
                 <input
+                    id="repetitions"
                     type="checkbox"
                     value={repeat}
                     onChange={() => setRepeat(!repeat)}
                 />
-                <p>Marque essa caixa para haver repetições</p>
+                <label htmlFor="repetitions">
+                    Marque essa caixa para haver repetições
+                </label>
             </div>
             <p>
                 Quando o senhor colar ai em cima elas devem aparecer aqui
@@ -56,7 +59,9 @@ function App() {
             <p>
                 {!!result.length && (
                     <>
-                        {result?.map((line) => {
+                        {result?.map((line, index) => {
+                            if (line?.length < 2) return null;
+
                             return (
                                 <>
                                     {line.map((item) => {
@@ -65,6 +70,7 @@ function App() {
                                             ? `0${item} `
                                             : `${item} `;
                                     })}
+                                    <br />
                                     <br />
                                 </>
                             );

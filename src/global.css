@@ -23,7 +23,8 @@ body,
 }
 
 h1,
-p {
+p,
+label {
     font-family: "Roboto", sans-serif;
 }
 
@@ -33,7 +34,7 @@ p {
 
 .App * {
     width: 90%;
-    max-width: 500px;
+    max-width: 1200px;
     text-align: center;
 }
 
@@ -43,8 +44,7 @@ textarea {
     max-height: 250px;
     padding: 8px;
 
-    min-width: 90%;
-    max-width: 90%;
+    width: 80%;
 
     border-radius: 4px;
 }
@@ -61,6 +61,6 @@ textarea {
     width: unset;
 }
 
-.check-container p {
+.check-container label {
     margin-left: 0.5rem;
 }
